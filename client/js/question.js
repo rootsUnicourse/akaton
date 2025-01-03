@@ -11,10 +11,8 @@ function loadQuestion() {
     const question = questions[currentQuestionIndex];
     document.getElementById('question-number').innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
     document.getElementById('question').innerText = question.question;
-
     const options = [...question.incorrect_answers, question.correct_answer];
     options.sort(() => Math.random() - 0.5);
-
     const optionsList = document.getElementById('options');
     optionsList.innerHTML = '';
     options.forEach(option => {
@@ -41,10 +39,7 @@ async function fetchQuestions() {
 }
 
 function endQuiz() {
-    const correctAnswers = userAnswers.filter(
-        (answer, index) => answer === questions[index].correct_answer
-    ).length;
-    location.href = `result.html?correct=${correctAnswers}&total=${questions.length}`;
+    location.href = `result.html?correct=${userAnswers.filter((answer, index) => answer === questions[index].correct_answer).length}&total=${questions.length}`;
 }
 
 fetchQuestions();

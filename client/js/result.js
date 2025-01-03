@@ -6,5 +6,5 @@ document.getElementById('correct').innerText = `${correct} of ${total} CORRECT`;
 document.getElementById('duration').innerText = `Duration: 2:35 Min`; // Example static duration
 
 function newGame() {
-    location.href = "start.html";
+    location.href = "index.html";
 }
