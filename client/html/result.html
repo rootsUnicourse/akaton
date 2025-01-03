@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #413554, #b52650);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .summary {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .new-game-btn {
+            background-color: #ff0099;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+        .new-game-btn:hover {
+            background-color: #e60088;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Game Summary</h1>
+        <div class="summary">
+            <p id="correct">Loading...</p>
+            <p id="duration">Loading...</p>
+        </div>
+        <button class="new-game-btn" onclick="newGame()">New Game</button>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const correct = urlParams.get('correct');
+        const total = urlParams.get('total');
+
+        document.getElementById('correct').innerText = `${correct} of ${total} CORRECT`;
+        document.getElementById('duration').innerText = `Duration: 2:35 Min`; // Example static duration
+
+        function newGame() {
+            location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
