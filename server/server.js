@@ -4,9 +4,11 @@ const logger = require('morgan');
 const port = process.env.PORT || 8080;
 
 const authRouter = require('./Routers/authRouter.js');
+const gameRouter = require('./Routers/gamesRouter.js');
+
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(logger("dev"));
 
 app.get('/', (req, res) => {
@@ -14,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/games', gameRouter);
 
 app.use((req, res) => {
     res.status(404).send("Page wasn't found");
