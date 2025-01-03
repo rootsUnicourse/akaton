@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const gameSchema = new Schema({
     gameId: { type: String, required: true },
     score: { type: Number, required: true },
-    averageTimePerQuestion: { type: Number, required: true },
+    // averageTimePerQuestion: { type: Number, required: true },
     level: { type: String, required: true, enum: ['easy', 'medium', 'hard'] },
     date: { type: Date, default: Date.now },
     totalQuestions: { type: Number, default: 10 },
@@ -20,5 +20,6 @@ const userSchema = new Schema({
 }, { collection: 'users' });
 
 const User = model('User', userSchema);
+
 
 module.exports = User;

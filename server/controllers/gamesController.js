@@ -35,7 +35,7 @@ exports.gameController = {
             res.status(500).json({ message: "Internal server error" });
         }
     },
-    async addGameResult(res, req) {
+    async addGameResult(req, res) {
         const { userId } = req.params;
         const { level, category, score, timeSpent } = req.body;
 
