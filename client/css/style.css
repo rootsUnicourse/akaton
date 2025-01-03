@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "ABeeZee", sans-serif;
+    background-color: #f4f4f4;
+}
+
+.firstImg {
+    background-image: url('../imgs/6528430168d961639894bd256fd7a177.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.SecondImg {
+    background-image: url('../imgs/b9447314cf796cd0b94f2c80356fac78.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    top:300px;
+    position: absolute;
+    z-index: -1;
+}
+
+#signupBox {
+    width: 296px;
+    height:372px;
+    padding: 20px;
+    border-radius: 37px;
+    background-color: rgba(37, 36, 36, 0.68);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#signUpText {
+    top:124px;
+    left:32px;
+    font-size: 43.08px;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 20px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top:20px;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(139, 139, 139);
+    outline: none;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: 16px;
+    color: rgba(128, 124, 124, 1);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 1);
+}
