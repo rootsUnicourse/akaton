@@ -3,7 +3,7 @@ const app = express();
 const logger = require('morgan');
 const port = process.env.PORT || 8080;
 
-const authRouter = require('./routers/authRouter.js');
+const authRouter = require('./Routers/authRouter.js');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
