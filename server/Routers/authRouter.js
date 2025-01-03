@@ -4,6 +4,5 @@ const authRouter = new Router();
 
 authRouter.post('/register', authController.register);
 authRouter.post('/login', authController.login);
-authRouter.post('/validate', authController.validateFieldRegister);
 
-module.exports = authRouter;
+module.exports = authRouter;
